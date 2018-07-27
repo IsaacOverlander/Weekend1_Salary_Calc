@@ -85,6 +85,6 @@ function appendDom() {
     }
 
     function deleteEmployee() {
-        let employee = $('#deleteInput').val();
+        console.log('in deletEmployee');
     }
 }
