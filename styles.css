@@ -1,7 +1,20 @@
 table {
-    border: solid black 1px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
 }
 
 th {
-    margin: 10px;
+    background-color: #2C3852;
+    color: white;
+    font-size: 18px;
+  }
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
 }
+
