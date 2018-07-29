@@ -39,8 +39,9 @@ function appendDom() {
 
     $('#submit-btn').on('click', submitInfo);
     //creating delete input and button
-    $('.container').append('<input id="deleteInput" placeholder="Employee ID Number"></button>');
-    $('.container').append('<button id="deleteButton">Delete Employee</button>');
+    $('.container').append('<div id="deleteDiv"></div>');
+    $('#deleteDiv').append('<input id="deleteInput" placeholder="Employee ID Number"></button>');
+    $('#deleteDiv').append('<button id="deleteButton">Delete Employee</button>');
     $('#deleteButton').on('click', deleteEmployee);
 
     function submitInfo() {
