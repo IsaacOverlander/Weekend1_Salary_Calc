@@ -81,13 +81,15 @@ function appendDom() {
         //loop through and add all employees salaries to total
         for (let i = 0; i < array.length; i++) {
             let person = array[i];
-            total = total + person.salary;
+            total = total + Number(person.salary);
+            console.log(total);
+            
         }
         //divide the new total by 12 to get the Total Monthly
         total = total / 12;
 
         //add the new Total Monthly to the Dom
-        $('#footerTable').html('<thead><tr><th id="totalMonthly">Total Monthly: ' + total.toFixed(2) + '</th></thead>');
+        $('#footerTable').html('<thead><tr><th id="totalMonthly">Total Monthly: ' + total.toLocaleString('en-US', {style: 'currency', currency: 'USD'}) + '</th></thead>');
         //add a red background if Total Monthly is above 20000
         if (total > 20000) {
             $('#totalMonthly').toggleClass('redBackground');
@@ -101,7 +103,7 @@ function appendDom() {
         //add each employee from the array to the Dom
         for (let i = 0; i < array.length; i++) {
             const employee = array[i];
-            tbody.append('<tr id="' + employee.id + '"><td>' + employee.firstName + '</td><td>' + employee.lastName + '</td><td>' + employee.id + '</td><td>' + employee.title + '</td><td>' + employee.salary + '</td></tr>');
+            tbody.append('<tr id="' + employee.id + '"><td>' + employee.firstName + '</td><td>' + employee.lastName + '</td><td>' + employee.id + '</td><td>' + employee.title + '</td><td>' + Number(employee.salary).toLocaleString('en-US', {style: 'currency', currency: 'USD'}) + '</td></tr>');
         }
     }
 
